@@ -31,13 +31,13 @@ Make sure you have the following installed on your machine:
 
 ### Here's ScreenShots
 ![Employee Management](https://github.com/uec203/Employee-Management-App/blob/main/ScreenShots/pic1.png?raw=true)
-## --------------------------------------------------------------------------------------------------------------------------------------------------------------
+## ----------------------------------------------------------------------------------------------
 ![Employee Management](https://github.com/uec203/Employee-Management-App/blob/main/ScreenShots/pic2.png?raw=true)
-## --------------------------------------------------------------------------------------------------------------------------------------------------------------
+## ----------------------------------------------------------------------------------------------
 ![Employee Management](https://github.com/uec203/Employee-Management-App/blob/main/ScreenShots/pic3.png?raw=true)
-## --------------------------------------------------------------------------------------------------------------------------------------------------------------
+## ----------------------------------------------------------------------------------------------
 ![Employee Management](https://github.com/uec203/Employee-Management-App/blob/main/ScreenShots/pic4.png?raw=true)
-## --------------------------------------------------------------------------------------------------------------------------------------------------------------
+## ----------------------------------------------------------------------------------------------
 ![Employee Management](https://github.com/uec203/Employee-Management-App/blob/main/ScreenShots/pic5.png?raw=true)
 
 
