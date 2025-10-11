@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import EmployeeService from '../Service/EmployeeService';
 import {useParams, useNavigate } from 'react-router-dom';
+import { getEmployeeById } from '../state/employee/Action';
+import { useDispatch, useSelector } from 'react-redux';
 
 const ViewEmployeeComponent = () => {
     const { id } = useParams(); 
@@ -8,15 +10,15 @@ const ViewEmployeeComponent = () => {
     const [lastName, setLastName] = useState('');
     const [emailId, setEmailId] = useState('');
     const navigate = useNavigate();
+    const employee = useSelector(store => store.employee.employee)
+    const dispatch = useDispatch();
 
-    useEffect(()=>{
-        EmployeeService.getEmployeeById(id).then(res=>{
-            let employee = res.data;
-            setFirstName(employee.firstName);
-            setLastName(employee.lastName);
-            setEmailId(employee.emailId);
-        })
-    },[]);
+    useEffect(() => {
+        dispatch(getEmployeeById(id));
+        setFirstName(employee.firstName);
+        setLastName(employee.lastName);
+        setEmailId(employee.emailId);
+    }, [id]);
 
     return (
         <div>

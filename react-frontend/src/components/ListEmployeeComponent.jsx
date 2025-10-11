@@ -2,37 +2,33 @@ import React, { useState, useEffect } from 'react';
 import EmployeeService from '../Service/EmployeeService';
 import { useNavigate } from 'react-router-dom';
 import AddEmployeeButton from '../navigate/AddEmployeeButton';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteEmployeeById, getEmployeesList } from '../state/employee/Action';
 
 const ListEmployeeComponent = () => {
-    const [employees, setEmployees] = useState([]);
-    const navigate = useNavigate(); // Hook to navigate programmatically
+    const employees = useSelector(store => store.employee.employees);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     useEffect(() => {
-        // Fetch employees data when the component mounts
-        EmployeeService.getEmployees().then((res) => {
-            setEmployees(res.data);
-        });
-    }, []); // Empty dependency array ensures this runs only once after the component mounts
+        dispatch(getEmployeesList())
+    }, [employees]); 
 
-    // Handle employee update navigation
+
     const updateEmployee = (id) => {
-        navigate(`/employees/${id}`); // Use navigate to redirect to the update page
+        navigate(`/employees/${id}`); 
     };
     const viewEmployee = (id) => {
-        navigate(`/view-employees/${id}`); // Use navigate to redirect to the update page
+        navigate(`/view-employees/${id}`); 
     };
     const deleteEmployee = (id) => {
-        EmployeeService.deleteEmployee(id).then(() => {
-            // Update the state after successfully deleting an employee
-            setEmployees((prevEmployees) =>
-                prevEmployees.filter((employee) => employee.id !== id)
-            );
-        })
+        dispatch(deleteEmployeeById(id));
+        dispatch(getEmployeesList());
     };
 
     return (
         <div>
-            <h2 className='text-center'>
+            <h2 className='text-center mx-auto'>
                 Employees List
             </h2>
             <AddEmployeeButton />

@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import EmployeeService from '../Service/EmployeeService';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { createEmployeeById } from '../state/employee/Action';
 
 const CreateEmployeeComponent = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [emailId, setEmailId] = useState('');
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const saveEmployee = (e) => {
         e.preventDefault();
         let employee = { firstName, lastName, emailId };
-        EmployeeService.addEmployees(employee);
+        dispatch(createEmployeeById(employee));
         navigate('/employees');
     };
 

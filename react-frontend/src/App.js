@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ListEmployeeComponent from './components/ListEmployeeComponent';
 import HeaderComponent from './components/HeaderComponent';
 import FooterComponent from './components/FooterComponent';
@@ -11,20 +11,26 @@ import ViewEmployeeComponent from './components/ViewEmployeeComponent';
 
 function App() {
   return (
-    <div>
-      <Router>
-          <HeaderComponent />
+    <div className="app-container d-flex flex-column min-vh-100">
+      <HeaderComponent />
+      
+      <div className="content flex-grow-1">
+        {/* Main content goes here */}
+        <Router>
+
           <div className="container">
             <Routes>
-              <Route path='/' element={<ListEmployeeComponent/>}></Route>
-              <Route path='/employees' element={<ListEmployeeComponent/>}></Route>
-              <Route path='/add-employee' element={<CreateEmployeeComponent/>}></Route>
-              <Route path='/employees/:id' element={<UpdateEmployeeComponent/>}> </Route>
-              <Route path='/view-employees/:id' element={<ViewEmployeeComponent/>}> </Route>
+              <Route path='/' element={<ListEmployeeComponent />}></Route>
+              <Route path='/employees' element={<ListEmployeeComponent />}></Route>
+              <Route path='/add-employee' element={<CreateEmployeeComponent />}></Route>
+              <Route path='/employees/:id' element={<UpdateEmployeeComponent />}> </Route>
+              <Route path='/view-employees/:id' element={<ViewEmployeeComponent />}> </Route>
             </Routes>
           </div>
-          <FooterComponent />
-      </Router>
+
+        </Router>
+      </div>
+      <FooterComponent />
     </div>
   );
 }

@@ -1,27 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import EmployeeService from '../Service/EmployeeService';
-import {useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getEmployeeById, updateEmployeeById } from '../state/employee/Action';
 
 const UpdateEmployeeComponent = () => {
-    const { id } = useParams(); 
+    const { id } = useParams();
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [emailId, setEmailId] = useState('');
     const navigate = useNavigate();
+    const employee = useSelector(store => store.employee.employee)
+    const dispatch = useDispatch();
 
-    useEffect(()=>{
-        EmployeeService.getEmployeeById(id).then(res=>{
-            let employee = res.data;
-            setFirstName(employee.firstName);
-            setLastName(employee.lastName);
-            setEmailId(employee.emailId);
-        })
-    },[]);
+    useEffect(() => {
+        dispatch(getEmployeeById(id));
+        setFirstName(employee.firstName);
+        setLastName(employee.lastName);
+        setEmailId(employee.emailId);
+    }, [id]);
 
     const updateEmployee = (e) => {
         e.preventDefault();
         let employee = { firstName, lastName, emailId };
-        EmployeeService.updateEmployees(id,employee);
+        dispatch(updateEmployeeById(id,employee));
         navigate('/employees');
     };
 
@@ -71,8 +73,8 @@ const UpdateEmployeeComponent = () => {
                                     Update
                                 </button>
                                 <button className='btn btn-danger'
-                                 style={{ margin: "10px" }} 
-                                 onClick={() => { navigate('/employees'); }}>
+                                    style={{ margin: "10px" }}
+                                    onClick={() => { navigate('/employees'); }}>
                                     Cancel
                                 </button>
                             </form>
