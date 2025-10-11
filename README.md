@@ -31,10 +31,10 @@ Make sure you have the following installed on your machine:
 ## Getting Started
 
 ### Here's ScreenShots
-![Employee Management](/Screenshots.pic1.png)
-![Employee Management](/Screenshots.pic2.png)
-![Employee Management](/Screenshots.pic3.png)
-![Employee Management](/Screenshots.pic4.png)
-![Employee Management](/Screenshots.pic5.png)
+![Employee Management](https://github.com/uec203/Employee-Management-App/blob/main/ScreenShots/pic1.png?raw=true)
+![Employee Management](https://github.com/uec203/Employee-Management-App/blob/main/ScreenShots/pic2.png?raw=true)
+![Employee Management](https://github.com/uec203/Employee-Management-App/blob/main/ScreenShots/pic3.png?raw=true)
+![Employee Management](https://github.com/uec203/Employee-Management-App/blob/main/ScreenShots/pic4.png?raw=true)
+![Employee Management](https://github.com/uec203/Employee-Management-App/blob/main/ScreenShots/pic5.png?raw=true)
 
 
