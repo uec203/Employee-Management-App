@@ -23,9 +23,8 @@ The application allows users to manage employee details such as name, lastname,e
 
 Make sure you have the following installed on your machine:
 - **JDK 11+**: Java Development Kit.
-- **Node.js**: JavaScript runtime.
+- **Node.js**: JavaScript runtime for react.
 - **Maven** or **Gradle**: To build and manage Spring Boot dependencies.
-- **MySQL/PostgreSQL** (optional if you are not using H2).
 - **Git**: Version control system.
 
 ## Getting Started
