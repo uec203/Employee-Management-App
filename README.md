@@ -17,7 +17,7 @@ The application allows users to manage employee details such as name, lastname,e
 ## Features
 
 - **CRUD Operations**: Create, Read, Update, Delete employee records.
-- **Responsive UI**: The frontend is built to be mobile-friendly using Bootstrap.
+- **Responsive UI**: The frontend is built to be mobile-friendly using TailWind CSS.
 
 ## Prerequisites
 
@@ -31,10 +31,10 @@ Make sure you have the following installed on your machine:
 ## Getting Started
 
 ### Here's ScreenShots
-![Employee Management](./Screenshots.pic1.png)
-![Employee Management](./Screenshots.pic2.png)
-![Employee Management](./Screenshots.pic3.png)
-![Employee Management](./Screenshots.pic4.png)
-![Employee Management](./Screenshots.pic5.png)
+![Employee Management](/Screenshots.pic1.png)
+![Employee Management](/Screenshots.pic2.png)
+![Employee Management](/Screenshots.pic3.png)
+![Employee Management](/Screenshots.pic4.png)
+![Employee Management](/Screenshots.pic5.png)
 
 
